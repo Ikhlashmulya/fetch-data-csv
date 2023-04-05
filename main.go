@@ -19,9 +19,7 @@ type QuoteAnime struct {
 
 func getConnection() *sql.DB {
 	db, err := sql.Open("mysql", "root:@/go_rest_api")
-	if err != nil {
-		log.Fatal(err)
-	}
+	fatalErr(err)
 
 	db.SetMaxIdleConns(10)
 	db.SetMaxOpenConns(100)
@@ -31,7 +29,7 @@ func getConnection() *sql.DB {
 
 func fatalErr(err error) {
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
 
