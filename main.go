@@ -18,7 +18,7 @@ type QuoteAnime struct {
 }
 
 func getConnection() *sql.DB {
-	db, err := sql.Open("mysql", "root:@/go_rest_api")
+	db, err := sql.Open("mysql", "root:4kWJkVilqTYs1HjQ9DkC@tcp(containers-us-west-53.railway.app:5609)/railway")
 	fatalErr(err)
 
 	db.SetMaxIdleConns(10)
